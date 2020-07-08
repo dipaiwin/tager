@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  iai:
+    build: iai
+    image: iai
+    container_name: iai_ci
+    ports:
+    - $PORT_IAI:80
+    volumes:
+    - ./iai/src:/srv
+    - ./iai/model:/model
+  ner:
+    build: ner
+    image: ner
+    container_name: ner_ci
+    ports:
+    - $PORT_NER:$PORT_NER
+    volumes:
+    - ./ner/src:/root/.deeppavlov
+  tes:
+    build: tes
+    image: tes
+    container_name: tes_ci
+    ports:
+    - $PORT_TES:80
+    volumes:
+    - ./tes/src:/srv
+  tr:
+    build: tr
+    image: tr
+    container_name: tr_ci
+    ports:
+    - $PORT_TR:80
+    volumes:
+    - ./tr/src:/srv
+
+networks:
+  default:
+    external:
+      name: ocas
+

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>My app</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand mx-auto">
+        <img src="assets/unnamed.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Подбор тегов
+    </a>
+</nav>
+<div class="container">
+    <div style=" margin-left: auto; margin-right: auto;">
+        <form class="mainForm">
+            <div class="form-group mt-3">
+                <div class="row">
+                    <div class="col-6" style="margin-bottom: 41px">
+                        <h5 class="text-center">Текст</h5>
+                        <textarea class="form-control mt-3 inputText" id="exampleFormControlTextarea1" name="text"></textarea>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="text-center">Изображение</h5>
+                        <div class="input-group mt-3">
+                            <input type="file" name="image" class="file" accept="image/*">
+                            <input type="text" class="form-control" disabled placeholder="Загрузите файл" id="file">
+                            <div class="input-group-append">
+                                <button type="button" class="browse btn btn-primary">Загрузить</button>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail" alt="....">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="isAvgPop" name="defaultExampleRadios"">
+                <label class="custom-control-label" for="isAvgPop">Выбрать средней популярности</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="isMostPop" name="defaultExampleRadios" checked>
+                <label class="custom-control-label" for="isMostPop">Выбрать самые популярные</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input isLocation" id="isLocation">
+                <label class="custom-control-label" for="isLocation">Использовать местоположение</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block mt-3 sendBtn">Отправить</button>
+        </form>
+        <h5 class="text-center mt-2">Релевантные теги</h5>
+        <textarea name="Text1" class="form-control w-100 tagsLine mt-2" readonly ></textarea>
+        <button class="btn btn-primary copyBtn mt-1" data-clipboard-target=".tagsLine">Копировать</button>
+    </div>
+</div>
+</body>

@@ -1,0 +1,19 @@
+version: '2.3'
+
+services:
+  ci:
+    build:
+      context: .
+    image: $SRV
+    labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=PathPrefixStrip:/$SRV/
+    env_file:
+      - ./.env
+    volumes:
+      - ./src/static:/srv/static
+
+networks:
+  default:
+    external:
+      name: ocas

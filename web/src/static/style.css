@@ -1,0 +1,11 @@
+.file {
+    visibility: hidden;
+    position: absolute;
+}
+
+textarea.form-control {
+    height: 100%;
+}
+.tagsLine{
+    height: auto;!important;
+}
